@@ -3,5 +3,6 @@ https://github.com/ShengYaoo/XmlAnalysisTeamWork
 1104105303-邱昱軒(YuSyuan1208)
 1104105307-施智皓(JustSoGreat)
 1104105348-謝政憲(husano896)
+1104105355-黄佳禾(Kiyoshimo)
 master 主支
-YuSyuan1208 JustSoGreat 分支後合併回master
+YuSyuan1208 JustSoGreat husano896 Kiyoshimo 分支後合併回 master
