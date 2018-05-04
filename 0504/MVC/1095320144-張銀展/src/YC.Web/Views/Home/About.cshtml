@@ -1,0 +1,17 @@
+﻿@model IEnumerable<YC.Models.OpenData>
+@{
+    ViewBag.Title = "About";
+}
+<h2>@ViewBag.Title.</h2>
+<h3>@ViewBag.Message</h3>
+
+@foreach (var item in Model)
+{
+    <h1>
+        <a href="@item.下載連結">
+            @item.資料集名稱
+        </a>
+    </h1>
+
+}
+<p>Use this area to provide additional information.</p>
