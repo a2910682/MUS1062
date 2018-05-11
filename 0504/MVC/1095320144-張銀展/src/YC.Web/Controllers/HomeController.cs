@@ -19,7 +19,8 @@ namespace YC.Web.Controllers
         {
             ViewBag.Message = "Your application description page.";
             OpenData_DbContext db = new OpenData_DbContext();
-            var model=db.OpenDatas.ToList();
+            var model = db.OpenDatas
+                .ToList();
             return View(model);
         }
 

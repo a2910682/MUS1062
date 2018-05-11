@@ -10,8 +10,8 @@ namespace YC.Database
     {
         static OpenData_DbContext()
         {
-            DbInit dbinit = new DbInit();
-            System.Data.Entity.Database.SetInitializer(dbinit);
+            //DbInit dbinit = new DbInit();
+            //System.Data.Entity.Database.SetInitializer(dbinit);
 
         }
         public OpenData_DbContext()
@@ -24,7 +24,7 @@ namespace YC.Database
         public System.Data.Entity.IDbSet<YC.Models.OpenData> OpenDatas { get; set; }
     }
 
-    public class DbInit : System.Data.Entity.DropCreateDatabaseAlways<OpenData_DbContext>
+    public class DbInit : System.Data.Entity.CreateDatabaseIfNotExists<OpenData_DbContext>
     {
 
 
@@ -42,7 +42,7 @@ namespace YC.Database
                 context.OpenDatas.Add(x);
             });
             context.SaveChanges();
-            //
+
         }
     }
 }
