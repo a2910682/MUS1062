@@ -1,7 +1,13 @@
 ﻿@model IEnumerable<YC.Models.OpenData>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "高雄市政府開放資料";
+}
+@section scripts{
+    <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
+    <script src="dist/js/pages/dashboard.js"></script>
+    <!-- AdminLTE for demo purposes -->
+    <script src="dist/js/demo.js"></script>
 }
 
 <h2>Index</h2>
@@ -9,34 +15,63 @@
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.資料集名稱)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.服務分類)
-        </th>
-        <th></th>
-    </tr>
+<section class="content">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="box">
+                <div class="box-header with-border">
+                    <h3 class="box-title">Open Data</h3>
+                </div>
+                <!-- /.box-header -->
+                <div class="box-body">
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.資料集名稱)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.服務分類)
+                                </th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>
+                                <a href="@item.下載連結">
+                                    @Html.DisplayFor(modelItem => item.資料集名稱)
+                                </a>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            <a href="@item.下載連結">
-                @Html.DisplayFor(modelItem => item.資料集名稱)
-            </a>
-            
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.服務分類)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.ID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.ID })
-        </td>
-    </tr>
-}
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.服務分類)
+                            </td>
+                            <td>
+                                @Html.ActionLink("Edit", "Edit", new { id = item.ID }) |
+                                @Html.ActionLink("Details", "Details", new { id = item.ID }) |
+                                @Html.ActionLink("Delete", "Delete", new { id = item.ID })
+                            </td>
+                        </tr>
+            }
+                        </tbody>
+                    </table>
+                </div>
+                <!-- /.box-body -->
+                <div class="box-footer clearfix">
+                    <ul class="pagination pagination-sm no-margin pull-right">
+                        <li><a href="#">«</a></li>
+                        <li><a href="#">1</a></li>
+                        <li><a href="#">2</a></li>
+                        <li><a href="#">3</a></li>
+                        <li><a href="#">»</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+    
 
-</table>

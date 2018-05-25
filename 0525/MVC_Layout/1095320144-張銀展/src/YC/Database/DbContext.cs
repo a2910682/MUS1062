@@ -10,8 +10,8 @@ namespace YC.Database
     {
         static OpenData_DbContext()
         {
-            DbInit dbinit = new DbInit();
-            System.Data.Entity.Database.SetInitializer(dbinit);
+            //DbInit dbinit = new DbInit();
+            //System.Data.Entity.Database.SetInitializer(dbinit);
 
         }
         public OpenData_DbContext()
